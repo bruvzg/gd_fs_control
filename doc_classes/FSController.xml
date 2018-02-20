@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<class name="FSController" inherits="Node" category="Core" version="3.1-dev">
+	<brief_description>
+	</brief_description>
+	<description>
+	</description>
+	<tutorials>
+	</tutorials>
+	<demos>
+	</demos>
+	<methods>
+		<method name="change_mode_borderless_fullscreen">
+			<return type="void">
+			</return>
+			<argument index="0" name="screen" type="int" default="0">
+			</argument>
+			<description>
+				Sets the mode to borderless fullscreen, set monitor.
+			</description>
+		</method>
+		<method name="change_mode_exclusive_fullscreen">
+			<return type="void">
+			</return>
+			<argument index="0" name="mode" type="Vector3">
+			</argument>
+			<argument index="1" name="screen" type="int" default="0">
+			</argument>
+			<description>
+				Sets the mode to exclusive fullscreen, set monitor and video mode.
+			</description>
+		</method>
+		<method name="change_mode_windowed">
+			<return type="void">
+			</return>
+			<argument index="0" name="size" type="Vector2">
+			</argument>
+			<argument index="1" name="position" type="Point2">
+			</argument>
+			<argument index="2" name="screen" type="int" default="0">
+			</argument>
+			<description>
+				Sets the mode to windowed, set monitor and size of a window.
+			</description>
+		</method>
+		<method name="get_screen_mode_list" qualifiers="const">
+			<return type="Array">
+			</return>
+			<argument index="0" name="screen" type="int" default="-1">
+			</argument>
+			<description>
+				Returns the available video modes for the specified screen by index. If no screen index is provided, the current screen will be used.
+			</description>
+		</method>
+	</methods>
+	<constants>
+	</constants>
+</class>

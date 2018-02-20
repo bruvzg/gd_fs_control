@@ -15,11 +15,13 @@
 
 void _get_screen_mode_list_native(List<Vector3> *p_list, int p_screen);
 
-class FSController : public Node {
+class FSController : public Object {
 
-	GDCLASS(FSController, Node);
+	GDCLASS(FSController, Object);
 
 protected:
+	static FSController *singleton;
+
 	static void _bind_methods();
 	void _notification(int p_what);
 
@@ -27,6 +29,8 @@ private:
 	FSControllerNative native_hnd;
 
 public:
+	static FSController *get_singleton();
+
 	Array get_screen_mode_list(int p_screen) const;
 
 	void change_mode_windowed(const Vector2 &p_size, const Point2 &p_position, int p_screen);

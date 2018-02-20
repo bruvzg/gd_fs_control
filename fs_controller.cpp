@@ -4,6 +4,13 @@
 
 #include "fs_controller.h"
 
+FSController *FSController::singleton = NULL;
+
+FSController *FSController::get_singleton() {
+
+	return singleton;
+};
+
 void FSController::_bind_methods() {
 
 	ClassDB::bind_method(D_METHOD("get_screen_mode_list", "screen"), &FSController::get_screen_mode_list, DEFVAL(-1));
@@ -79,10 +86,11 @@ void FSController::change_mode_exclusive_fullscreen(const Vector3 &p_mode, int p
 
 FSController::FSController() {
 
-	OS::get_singleton()->set_window_resizable(false);
+	singleton = this;
 };
 
 FSController::~FSController() {
 
 	native_hnd.restore_video_mode();
+	singleton = NULL;
 };

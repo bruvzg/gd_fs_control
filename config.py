@@ -1,4 +1,6 @@
-def can_build(platform):
+def can_build(env, platform):
+    if platform in ['server', 'javascript', 'ios', 'android']:
+        return False
     return True
 
 def configure(env):

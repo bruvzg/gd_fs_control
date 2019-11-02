@@ -13,8 +13,5 @@ if (env["platform"] == 'windows'):
 	env_fsctl.add_source_files(env.modules_sources, "platform/windows/*.cpp")
 elif (env["platform"] == 'osx'):
 	env_fsctl.add_source_files(env.modules_sources, "platform/macos/*.mm")
-	env.Append(LINKFLAGS=['-framework', 'CoreVideo'])
 elif env["platform"] == 'x11':
 	env_fsctl.add_source_files(env.modules_sources, "platform/linuxbsd/*.cpp")
-
-
